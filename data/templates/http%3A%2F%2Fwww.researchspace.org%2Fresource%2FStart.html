@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <semantic-context repository="openstreetmap">
+            <semantic-simple-search
+                query='
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                        prefix query: <http://www.researchspace.org/resource/system/>
+                        PREFIX osm: <http://www.researchspace.com/resource/assets/Ontologies/openstreetmap#>
+                        SELECT * WHERE {
+                            SERVICE <http://www.researchspace.org/resource/system/service#OpenstreetmapSail> {
+                                ?q osm:q ?__token__ .
+                                ?q osm:displayName ?name .
+                                ?q osm:geoText ?wkt .
+                                ?q osm:wikidata ?wiki
+                            }
+                        }'
+                template='{{name.value}} ({{wiki.value}})'
+                input-placeholder='Search for a place e.g. "Venice"'
+            ></semantic-simple-search>
+        </semantic-context>
+    </div>
+</div>
