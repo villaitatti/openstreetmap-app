@@ -6,7 +6,7 @@
 @prefix : <http://www.researchspace.org/resource/system/service/custom#> .
 
 [] a repo:Repository ;
-  repo:repositoryID "openstreetmap" ;
+  repo:repositoryID "openstreetmaps" ;
   rdfs:label "A wrapper for the OSM repository" ;
   repo:repositoryImpl [
     repo:repositoryType "openrdf:SailRepository" ;
